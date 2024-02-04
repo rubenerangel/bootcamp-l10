@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChirpController;
 use App\Http\Controllers\ProfileController;
 
+// Para mira el problema de N+1
+// DB::listen(function ($query)  {
+//     dump($query->sql);
+// });
+
 Route::view('/', 'welcome')->name('welcome');
 
 // Route::get('/dashboard', function () {
