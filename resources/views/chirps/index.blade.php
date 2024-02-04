@@ -45,7 +45,8 @@
                             </p>
                         </div>
                         {{-- @if (auth()->user()->id === $chirp->user_id) --}}
-                        @if (auth()->user()->is($chirp->user))
+                        {{-- @if (auth()->user()->is($chirp->user)) --}}
+                        @can('update', $chirp)
                             <x-dropdown>
                                 <x-slot name="trigger">
                                     <button>
@@ -60,7 +61,7 @@
                                     </x-dropdown-link>
                                 </x-slot>
                             </x-dropdown>
-                        @endif
+                        @endcan
 
                         {{-- <a href="{{ route('chirps.edit', $chirp) }}">{{ }}</a> --}}
                     </div>
